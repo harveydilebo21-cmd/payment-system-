@@ -1,6 +1,8 @@
 from datetime import date, timedelta
 from decimal import Decimal
 
+import pytest
+
 from payroll.calculator import calculate_payslip
 from payroll.models import AttendanceDay, AttendanceStatus, Employee, Role
 
@@ -49,3 +51,9 @@ def test_different_roles_earn_different_amounts():
 def test_empty_period_pays_zero():
     slip = calculate_payslip(Employee("Sam", GRASS_CUTTER), [])
     assert slip.net_pay == Decimal("0.00")
+
+def test_duplicate_date_is_rejected():
+    day = date(2026, 10, 1)
+    duplicated = [AttendanceDay(day, PRESENT), AttendanceDay(day, UNREGISTERED)]
+    with pytest.raises(ValueError):
+        calculate_payslip(Employee("Sam", GRASS_CUTTER), duplicated)
