@@ -20,6 +20,7 @@ class Role:
 class Employee:
     name: str
     role: Role
+    id: int | None = None
 
 
 @dataclass(frozen=True)
