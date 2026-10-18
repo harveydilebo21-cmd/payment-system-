@@ -35,3 +35,8 @@ class Payslip:
     potential_pay: Decimal
     deductions: Decimal
     net_pay: Decimal
+
+@dataclass(frozen=True)
+class PayRun:
+    payslips: tuple[Payslip, ...]
+    total_cash: Decimal   # sum of every employee's net pay
