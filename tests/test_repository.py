@@ -65,3 +65,10 @@ def test_attendance_for_an_unsaved_employee_is_rejected(repo):
     unsaved = Employee("Ghost", GRASS_CUTTER)   # no id, never stored
     with pytest.raises(ValueError):
         repo.record_attendance(unsaved, date(2026, 10, 1), PRESENT)
+
+def test_roles_can_be_listed_alphabetically(repo):
+    repo.add_role(GRASS_CUTTER)
+    repo.add_role(Role("Driver", Decimal("400.00")))
+
+    assert repo.list_roles() == [Role("Driver", Decimal("400.00")), GRASS_CUTTER]
+    

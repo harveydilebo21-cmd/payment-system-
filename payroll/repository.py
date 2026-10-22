@@ -42,6 +42,13 @@ class PayrollRepository:
                 (role.name, str(role.daily_rate)),
             )
 
+    def list_roles(self) -> list[Role]:
+        rows = self._conn.execute(
+            "SELECT name, daily_rate FROM roles ORDER BY name"
+        ).fetchall()
+        return [Role(name, Decimal(rate)) for name, rate in rows]
+        
+
     def add_employee(self, name: str, role: Role) -> Employee:
         with self._conn:
             cursor = self._conn.execute(
