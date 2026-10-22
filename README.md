@@ -111,17 +111,6 @@ Prorated shift calculations for split attendance.
 
 Complete absence penalty deduction accuracy.
 
-Database constraint verification for duplicate entries.
-
-📈 Roadmap
-
-[x] Variable role-based daily rate engine
-
-[x] Shift absence penalty deductions
-
-[ ] SMS / WhatsApp payout notification integration
-
-[ ] Geo-tagging shift check-ins for field supervisors
 
 👨‍💻 Author & Contact
 
