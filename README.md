@@ -1,3 +1,5 @@
+![Tests](https://github.com/harveydilebo21-cmd/payment-system-/actions/workflows/tests.yml/badge.svg)
+
 My Aunt ran a small company focused on forest clearing, employees have daily rates but they all rate differently according to what they do
 for example the driver does not have the same daily rate as the grass cutter, so she was always trapped under a mountain of paperwork and stuck with a calculator trying to calculate how much each employee is owed and deducting if the employee has unregistered absences.
 So I decided to create A streamlined, role-based workforce management and automated wage calculation platform engineered to eliminate manual bookkeeping, track attendance anomalies, and automate variable-tier payroll for field-service operations.
